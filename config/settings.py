@@ -30,7 +30,7 @@ INSTALLED_APPS = [
     'electronics_network',
     'rest_framework',
     'django_filters',
-
+    'drf_yasg',
 ]
 
 MIDDLEWARE = [
