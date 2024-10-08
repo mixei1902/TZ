@@ -67,7 +67,7 @@ class NetworkNodeViewSetTest(APITestCase):
         url = reverse('networknode-list')
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
-        self.assertEqual(len(response.data), 2)  # Ожидаем 2 объекта в ответе
+        self.assertEqual(len(response.data), 2)
 
     def test_filter_by_country(self):
         # Тестирование фильтрации по стране
@@ -85,7 +85,7 @@ class NetworkNodeViewSetTest(APITestCase):
 
     def test_active_user_access(self):
         # Тестирование доступа только для активных пользователей
-        self.client.logout()  # Логаут пользователя
+        self.client.logout()
         url = reverse('networknode-list')
         response = self.client.get(url)
-        self.assertEqual(response.status_code, 403)  # Доступ запрещен
+        self.assertEqual(response.status_code, 403)

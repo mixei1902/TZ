@@ -24,7 +24,7 @@ class NetworkNodeAdmin(admin.ModelAdmin):
 
     def clear_debt(self, request, queryset):
         """
-        Admin action для обнуления задолженности выбранных звеньев.
+        Функция для обнуления задолженности выбранных звеньев.
         """
         queryset.update(debt=0)
         self.message_user(request, "Задолженность успешно обнулена.")

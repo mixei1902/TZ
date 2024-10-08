@@ -1,4 +1,5 @@
 from rest_framework import serializers
+
 from .models import NetworkNode, ContactInfo, Product
 
 
@@ -6,6 +7,7 @@ class ContactInfoSerializer(serializers.ModelSerializer):
     """
     Сериализатор для модели ContactInfo.
     """
+
     class Meta:
         model = ContactInfo
         fields = '__all__'
@@ -15,6 +17,7 @@ class ProductSerializer(serializers.ModelSerializer):
     """
     Сериализатор для модели Product.
     """
+
     class Meta:
         model = Product
         fields = '__all__'
@@ -34,7 +37,7 @@ class NetworkNodeSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = NetworkNode
-        exclude = ('debt',)  # Запрет обновления через API поля "Задолженность перед поставщиком"
+        fields = '__all__'
 
     def create(self, validated_data):
         """

@@ -9,5 +9,5 @@ router.register(r'network-nodes', NetworkNodeViewSet, basename='networknode')
 urlpatterns = [
     path('', include(router.urls)),
 ]
-# Добавляем маршруты API
+
 urlpatterns += router.urls
